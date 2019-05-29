@@ -1,0 +1,1 @@
+wget http://commando21.ru/hacknet.txt
