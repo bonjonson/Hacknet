@@ -1,4 +1,4 @@
-import wget
+#import wget
 import sys
 
 open_file = '' #переменная для открытия файла
@@ -6,7 +6,7 @@ code_list = '' #переменная для чтения содержимого 
 code = '' #переменная хранящая код
 code_inputed = '' #переменная для хранения введённых кодов
 
-#wget.download = ('http://hacknet.commando21.ru", 'hacknet.txt') #Загрузка файла с кодами
+wget.download = ('http://commando21.ru/hacknet.txt', filename = 'Hacknet/hacknet.txt') #Загрузка файла с кодами
 try:
     open_file = open('hacknet.txt', 'r').read() # открываем файл и сохраняем его в переменную
 except IOError:
