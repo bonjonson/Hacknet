@@ -8,7 +8,7 @@ code_list = '' #переменная для чтения содержимого 
 code = '' #переменная хранящая код
 code_inputed = '' #переменная для хранения введённых кодов
 
-subprocess.call('download_codes.sh', shell = True) #вызов внешнего скрипта
+subprocess.call('./download_codes.sh', shell = True) #вызов внешнего скрипта
 print('Connecting to hacknet server') #приветственное сообщение
 time.sleep(10) #пауза для гарантированной загрузки файла
 
