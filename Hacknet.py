@@ -1,14 +1,14 @@
-#import wget
+import requests
 import sys
 
-open_file = '' #переменная для открытия файла
 code_list = '' #переменная для чтения содержимого файла
 code = '' #переменная хранящая код
 code_inputed = '' #переменная для хранения введённых кодов
 
-wget.download = ('http://commando21.ru/hacknet.txt', filename = 'Hacknet/hacknet.txt') #Загрузка файла с кодами
 try:
-    open_file = open('hacknet.txt', 'r').read() # открываем файл и сохраняем его в переменную
+    open_file = open(r'hacknet.txt', 'wb') #открываем файл для записи
+    ufr = requests.get('http://commando21.ru/hacknet.txt') #создаем запрос
+    open_file.write(ufr.content) #записываем содержимое в файл
 except IOError:
     print('No file')
     sys.exit(0) #программа завершается, если не обнаружен файл
