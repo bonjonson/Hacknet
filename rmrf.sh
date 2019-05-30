@@ -1,1 +1,1 @@
-sudo rm ./hacknet.txt
+rm ./hacknet.txt
