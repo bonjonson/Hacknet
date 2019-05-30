@@ -30,3 +30,5 @@ if os.stat('hacknet.txt').st_size > 0:
 else:
     print('File is empty')
     sys.exit(0) #завершаем программу, если файл пустой
+time.sleep(3) #пауза для гарантированного завершения программы
+subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
