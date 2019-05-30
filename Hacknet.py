@@ -11,7 +11,7 @@ code_inputed = '' #переменная для хранения введённы
 subprocess.call('./download_codes.sh', shell = True) #вызов внешнего скрипта
 print('Connecting to hacknet server') #приветственное сообщение
 time.sleep(5) #пауза для гарантированной загрузки файла
-team_id = int(input('Enter your team id: ')) #ввод номера команда
+team_id = (input('Enter your team id: ')) #ввод номера команда
 print("You're logged in as team #" + team_id, '\n') #вывод подтверждения ввхода в программу
 
 try:
