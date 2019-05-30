@@ -10,7 +10,7 @@ code_inputed = '' #переменная для хранения введённы
 
 subprocess.call('./download_codes.sh', shell = True) #вызов внешнего скрипта
 print('Connecting to hacknet server') #приветственное сообщение
-time.sleep(10) #пауза для гарантированной загрузки файла
+time.sleep(5) #пауза для гарантированной загрузки файла
 
 try:
     open_file = open('hacknet.txt', 'r').read() # открываем файл и сохраняем его в переменную
@@ -30,5 +30,15 @@ if os.stat('hacknet.txt').st_size > 0:
 else:
     print('File is empty')
     sys.exit(0) #завершаем программу, если файл пустой
+
+#Графический таймер с обратным отсчетом
+for remaining in range(10, 0, -1):
+    sys.stdout.write("\r")
+    sys.stdout.write("Starting upload security codes on Hacknet servers: ")
+    sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
+    sys.stdout.flush()
+    time.sleep(1)
+
+sys.stdout.write("\rTransfer complite!            \n")
 time.sleep(3) #пауза для гарантированного завершения программы
 subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
