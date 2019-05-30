@@ -32,7 +32,7 @@ if os.stat('hacknet.txt').st_size > 0:
             sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
             sys.stdout.flush()
             time.sleep(1)
-            sys.stdout.write("\rTransfer complite!                                                         \n")
+        sys.stdout.write("\rTransfer complite!                                                         \n")
     else:
         print("Access Denied", u'\u274c')
 else:
