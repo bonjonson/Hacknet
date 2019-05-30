@@ -12,6 +12,7 @@ subprocess.call('./download_codes.sh', shell = True) #вызов внешнег�
 print('Connecting to hacknet server') #приветственное сообщение
 time.sleep(5) #пауза для гарантированной загрузки файла
 team_id = int(input('Enter your team id: ')) #ввод номера команда
+print("You're logged in as team #" + team_id, '\n') #вывод подтверждения ввхода в программу
 
 try:
     open_file = open('hacknet.txt', 'r').read() # открываем файл и сохраняем его в переменную
@@ -34,7 +35,8 @@ if os.stat('hacknet.txt').st_size > 0:
             sys.stdout.flush()
             time.sleep(1)
         sys.stdout.write("\rTransfer complite!                                                         \n")
-        print("Congratulation! Team #", team_id, " You're won!")
+        time.sleep(1)
+        print("Congratulation! Team #"+ team_id, " You're won!")
     else:
         print("Access Denied", u'\u274c')
 else:
