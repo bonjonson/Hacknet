@@ -32,12 +32,11 @@ if os.stat('hacknet.txt').st_size > 0:
             sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
             sys.stdout.flush()
             time.sleep(1)
+            sys.stdout.write("\rTransfer complite!                                                         \n")
     else:
         print("Access Denied", u'\u274c')
 else:
     print('File is empty')
     sys.exit(0) #завершаем программу, если файл пустой
-
-sys.stdout.write("\rTransfer complite!                                                         \n")
 time.sleep(3) #пауза для гарантированного завершения программы
 subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
