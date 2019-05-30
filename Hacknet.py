@@ -25,19 +25,18 @@ if os.stat('hacknet.txt').st_size > 0:
     code_inputed = code_inputed.split() #сохраняем строку в лист, в качестве разделителя используется пробел
     if code_list == code_inputed: #сравниваем два списка
         print("Access Granted", u'\u2705')
+        #Графический таймер с обратным отсчетом
+        for remaining in range(10, 0, -1):
+            sys.stdout.write("\r")
+            sys.stdout.write("Starting upload security codes on Hacknet servers: ")
+            sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
+            sys.stdout.flush()
+            time.sleep(1)
     else:
         print("Access Denied", u'\u274c')
 else:
     print('File is empty')
     sys.exit(0) #завершаем программу, если файл пустой
-
-#Графический таймер с обратным отсчетом
-for remaining in range(10, 0, -1):
-    sys.stdout.write("\r")
-    sys.stdout.write("Starting upload security codes on Hacknet servers: ")
-    sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
-    sys.stdout.flush()
-    time.sleep(1)
 
 sys.stdout.write("\rTransfer complite!                                                         \n")
 time.sleep(3) #пауза для гарантированного завершения программы
