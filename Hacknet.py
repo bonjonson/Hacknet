@@ -39,6 +39,6 @@ for remaining in range(10, 0, -1):
     sys.stdout.flush()
     time.sleep(1)
 
-sys.stdout.write("\rTransfer complite!            \n")
+sys.stdout.write("\rTransfer complite!                                                         \n")
 time.sleep(3) #пауза для гарантированного завершения программы
 subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
