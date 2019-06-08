@@ -20,7 +20,7 @@ except IOError:
     print('No file')
     sys.exit(0) #программа завершается, если не обнаружен файл
 if os.stat('hacknet.txt').st_size > 0:
-    code_list = open_file.split() #считываем содержимое файла с кодами
+    code_list = open_file.split().lower() #считываем содержимое файла с кодами
     for code in code_list: 
         code = input('Enter your code: ') #вводим код
         code_inputed = code_inputed + ' ' + code #вносим код в строку code_inputed
