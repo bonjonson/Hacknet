@@ -8,7 +8,7 @@ code_list = '' #переменная для чтения содержимого 
 code = '' #переменная хранящая код
 code_inputed = '' #переменная для хранения введённых кодов
 
-subprocess.call('./download_codes.sh', shell = True) #вызов внешнего скрипта
+#subprocess.call('./download_codes.sh', shell = True) #вызов внешнего скрипта
 print('Connecting to hacknet server') #приветственное сообщение
 time.sleep(5) #пауза для гарантированной загрузки файла
 team_id = (input('Enter your team id: ')) #ввод номера команда
@@ -28,7 +28,7 @@ if os.stat('hacknet.txt').st_size > 0:
     if code_list == code_inputed: #сравниваем два списка
         print("Access Granted", u'\u2705')
         #Графический таймер с обратным отсчетом
-        for remaining in range(10, 0, -1):
+        for remaining in range(600, 0, -1):
             sys.stdout.write("\r")
             sys.stdout.write("Starting upload security codes on Hacknet servers: ")
             sys.stdout.write("{:2d} seconds remaining.".format(remaining)) 
@@ -43,4 +43,4 @@ else:
     print('File is empty')
     sys.exit(0) #завершаем программу, если файл пустой
 time.sleep(3) #пауза для гарантированного завершения программы
-subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
+#subprocess.call('./rmrf.sh', shell = True) #вызов скрипта удаления файла с кодами
